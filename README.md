@@ -2,11 +2,11 @@
 
 This system was designed to optimize the monitoring and evaluation of operational productivity. It works as follows:
 
-- **Automated Data Extraction**: Accesses an operational web page and uses Selenium automation to extract cargo receipt reports.
-- **Data Consolidation**: Downloads and concatenates multiple files into a unified dataset.
-- **Advanced Analysis**: Utilizes the Pandas library to perform complex calculations, including filtering by the IP address of operational machines.
-- **Productivity Metrics**: Calculates productivity percentages for each operator based on hours worked versus production output.
-- **Result Presentation**: Publishes the processed data on a dedicated web page, providing managers with a clear and interactive table of operational performance.
+- **Automated Data Extraction**: Accesses an operational web page and uses Selenium automation to extract cargo receipt reports.✔
+- **Data Consolidation**: Downloads and concatenates multiple files into a unified dataset.✔
+- **Advanced Analysis**: Utilizes the Pandas library to perform complex calculations, including filtering by the IP address of operational machines.✔
+- **Productivity Metrics**: Calculates productivity percentages for each operator based on hours worked versus production output.✔
+- **Result Presentation**: Publishes the processed data on a dedicated web page, providing managers with a clear and interactive table of operational performance.✔
 
 This solution ensures accurate, real-time insights into productivity, enabling better decision-making and operational efficiency.
 
