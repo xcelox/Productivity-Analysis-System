@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SAPM - Sistema Análise Produtividade Manual</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Auto.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+<body class="corpo">
+    <div class="header">
+        <div class="wrapper">
+            <svg>
+                <text x="50%" y="40%" dy=".15em" text-anchor="middle">
+                        SAP - Sistema Análise Produtividade Manual
+                </text>
+            </svg>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <div class="menu_site">
+                <a href="PAINEL" class="inicio_site">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 8 13.5V10H6v3.5A1.5 1.5 0 0 1 4.5 15h-3A1.5 1.5 0 0 1 0 13.5V9.293l6-6a1 1 0 0 1 1.414 0zM7.5 1.5a1 1 0 0 1 1 0l6 6a1 1 0 0 1-1.414 1.414L8 3.707 1.914 8.914A1 1 0 0 1 .5 7.5l6-6z"/>
+                    </svg>
+                    Página Inicial
+                </a>
+            </div>
+            <div class="painel">
+                <h1>Sistema Produtividade</h1>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="messages {% if 'erro' in messages[0]|lower %}error{% endif %}">
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                    </div>
+                {% endif %}
+                {% endwith %}
+
+                <form method="POST" action="/processar_csv" enctype="multipart/form-data" class="upload-box">
+                    <div class="form-group">
+                        <label for="arquivo_csv">Selecione os 4 arquivos CSV esperados:</label><br>
+                        <input type="file" name="arquivo_csv" id="arquivo_csv" accept=".csv" multiple required class="custom-file-input"><br>
+                        <button type="submit" class="btn">Enviar</button>
+                    </div>
+                </form>
+                <div class= "srp">
+                    <a href="/SIP_SMARTI" class="inicio_indicador">
+                    <span class="emoji"> Click aqui &#x1F449</span>
+
+                        <img src="{{ url_for('static', filename='indicador.png') }}" alt="Indicador" class="icono-indicador">
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
